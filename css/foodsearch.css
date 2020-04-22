@@ -5,9 +5,18 @@ input {
 
 .search {
 	border-radius: 10px;
-	border: 1px solid #73AD21;
+	border: 1px solid black;
 }
 
 #table {
+	overflow-x: auto;
+}
+
+.fruits {
+	background-color: black;
+	color: white;
+}
+
+.typing {
 	overflow-x: auto;
 }
