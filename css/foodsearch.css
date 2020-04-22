@@ -6,6 +6,9 @@ input {
 .search {
 	border-radius: 10px;
 	border: 1px solid black;
+	padding-left: 0.5%;
+	padding-top: 0.25%;
+	padding-bottom: 0.25%;
 }
 
 #table {
@@ -17,10 +20,6 @@ input {
 	color: white;
 }
 
-.typing {
-	overflow-x: auto;
-}
-
-input[type=text] {
-	overflow: visible;
+.textbox {
+	width: 80%;
 }
