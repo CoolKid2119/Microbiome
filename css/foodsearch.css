@@ -1,0 +1,13 @@
+input {
+	border: none;
+	outline: none;
+}
+
+.search {
+	border-radius: 10px;
+	border: 1px solid #73AD21;
+}
+
+#table {
+	overflow-x: auto;
+}

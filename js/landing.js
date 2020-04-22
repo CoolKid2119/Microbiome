@@ -22,3 +22,7 @@ function showVideo() {
 			location.href='file:///Users/audylebovitz/Desktop/Microbiome/plate.html';
     	}
 }
+
+function toPlate() {
+	location.href='file:///Users/audylebovitz/Desktop/Microbiome/plate.html';
+}
