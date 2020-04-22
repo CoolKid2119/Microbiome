@@ -9,17 +9,18 @@ input {
 	padding-left: 0.5%;
 	padding-top: 0.25%;
 	padding-bottom: 0.25%;
+	transition: all .5s linear;
 }
 
 #table {
 	overflow-x: auto;
 }
 
-.fruits {
-	background-color: black;
-	color: white;
-}
-
 .textbox {
 	width: 80%;
+}
+
+.fgtext {
+	background-color: black;
+	color: white;
 }

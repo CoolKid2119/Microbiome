@@ -10,4 +10,23 @@ $(document).on('click', '.fgimg', addTag);
 function bet(){
 	console.log('bet');
 	$(".fa-times-circle").show();
+
 }
+
+
+
+$(document).ready(function () {
+
+      $('#SearchString').tagsinput({
+          itemValue: 'text'
+      });
+
+      $checks = $(":checkbox");
+      $checks.on('change', function () {
+          $('#SearchString').tagsinput('removeAll');
+          $checks.filter(":checked").each(function( index ) {
+            	console.log( index + ": " + this.value );
+              $('#SearchString').tagsinput('add', { id: this.id, text: this.value });
+          });
+     }).trigger('change');
+});
