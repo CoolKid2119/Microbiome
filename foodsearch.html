@@ -1,18 +1,25 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/foodsearch.css">
+
     <script src="https://use.fontawesome.com/3fc8bf9443.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/foodsearch.js"></script>
 </head>
 
 Food Search
 
+<hr>
+
 <div class="search">
 
 	<span class="fa fa-search"></span>
+
 	<span class="typing">
-		<span class="fruits"> Fruits </span>
-		<input type="text">
+		<input type="text" placeholder="Enter food item" class="textbox" onfocus=bet()>
 	</span>
+
 	<span class="fa fa-times"></span>
+
 </div>
 
 Food Groups
@@ -20,11 +27,11 @@ Food Groups
 <div id="table">
 <table>
 	<tr>
-		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Fruits1.jpg" class="fgimg"> </td>
-		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Vegetables1.jpg" class="fgimg"> </td>
-		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Grains1.jpg" class="fgimg"> </td>
-		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Protein1.jpg" class="fgimg"> </td>
-		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Dairy1.jpg" class="fgimg"> </td>
+		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Fruits1.jpg" class="fgimg" value="Fruits"> </td>
+		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Vegetables1.jpg" class="fgimg" value="Vegetables"> </td>
+		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Grains1.jpg" class="fgimg" value="Grains"> </td>
+		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Protein1.jpg" class="fgimg" value="Protein"> </td>
+		<td> <img src="https://choosemyplate-prod.azureedge.net/sites/default/files/printablematerials/Button_Dairy1.jpg" class="fgimg" value="Dairy"> </td>
 	</tr>
 </table>
 </div>
