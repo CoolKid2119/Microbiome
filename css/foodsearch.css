@@ -38,9 +38,12 @@ input {
 
 #table {
 	overflow-x: scroll;
-	-webkit-overflow-scrolling: touch;
 	padding-top: 0.5%;
 	padding-left: 3%;
+}
+
+* {
+	-webkit-overflow-scrolling: touch;
 }
 
 .fgtext {
