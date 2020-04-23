@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 input {
 	border: none;
 	outline: none;
@@ -12,13 +16,13 @@ input {
 .title {
 	font-size: 600%;
 	font-weight: 600;
-	margin-left: 1.5%;
+	margin-left: 3%;
 }
 
 .category {
 	font-size: 325%;
 	font-weight: 600;
-	padding-left: 1.5%;
+	padding-left: 3%;
 }
 .search {
 	border-radius: 10px;
@@ -32,14 +36,14 @@ input {
 	font-size: 300%;
 	transition: all .5s linear;
 	margin-right: 1.5%;
-	margin-left: 1.5%;
+	margin-left: 3%;
 
 }
 
 #table {
 	overflow-x: auto;
 	padding-top: 0.5%;
-	padding-left: 1.5%;
+	padding-left: 3%;
 }
 
 .fgtext {
