@@ -17,13 +17,19 @@ $(document).ready(function () {
 		itemValue: 'text'
 	});
 
+   var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100;
+   $('.bootstrap-tagsinput').css('width', (100-f-0.66) + '%');
+
+   var cool = $(".fa-search").width() + $(".bootstrap-tagsinput").width();
+   var bet = $('.fa-search').parent().width();
+
 });
 
 function translateField(){
 	//$(".fa-times-circle").show(); nope only do this when they have typing something
 	// todo translate the whole div
 
-	
+
 	$(".bootstrap-tagsinput input").focus();
 
 }
