@@ -50,14 +50,14 @@ input {
   /*white-space: nowrap;
   overflow: scroll;*/
   background: #E1E1E1;
-  padding: 0;
+  padding: 0 !important;
 
 }
 
 .bootstrap-tagsinput input {
   background: white;/*#E1E1E1;*/
   width: 100%;
-  padding: 0;
+  padding: 0 !important;
 }
 
 .bootstrap-tagsinput .tag {
