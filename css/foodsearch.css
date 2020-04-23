@@ -33,16 +33,18 @@ input {
 
 .bootstrap-tagsinput {
   display: inline-block;
-  width: 89.5%;
-  overflow: wrap;
+  width: 100%;
+  white-space: nowrap;
+  overflow: scroll;
+  background: #E1E1E1;
 
+}
+
+.bootstrap-tagsinput input {
+  background: #E1E1E1;
+  width: 100%;
 }
 
 .bootstrap-tagsinput .tag {
   background: #87888C;
-  margin-right: 0px;
-}
-
-.fa-search {
-	width: 2%;
 }

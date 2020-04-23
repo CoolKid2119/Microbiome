@@ -22,7 +22,7 @@ $(document).ready(function () {
 function translateField(){
 	//$(".fa-times-circle").show(); nope only do this when they have typing something
 	// todo translate the whole div
-	$(".textbox").focus();
+	$(".bootstrap-tagsinput input").focus();
 
 }
 
