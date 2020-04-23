@@ -4,8 +4,19 @@ input {
 	background-color: #E1E1E1;
 }
 
+.titlesearch {
+	margin-left: 1.5%;
+	padding-bottom: 0.75%;
+}
+
 .title {
 	font-size: 300%;
+	font-weight: 600;
+}
+
+.category {
+	font-size: 150%;
+	font-weight: 600;
 }
 .search {
 	border-radius: 10px;
@@ -17,13 +28,13 @@ input {
 	padding-bottom: 0.25%;
 	font-size: 300%;
 	transition: all .5s linear;
-	margin-left: 3%;
-	margin-right: 3%;
+	margin-right: 1.5%;
 
 }
 
 #table {
 	overflow-x: auto;
+	padding-top: 0.5%;
 }
 
 .fgtext {
@@ -33,7 +44,7 @@ input {
 
 .bootstrap-tagsinput {
   display: inline-block;
-  width: 100%;
+  /*width: 100%;*/
   white-space: nowrap;
   overflow: scroll;
   background: #E1E1E1;
@@ -47,4 +58,13 @@ input {
 
 .bootstrap-tagsinput .tag {
   background: #87888C;
+}
+
+.line {
+	border-top: 1px solid black;
+}
+
+.foodgroups {
+	padding-top: 0.5%;
+	margin-left: 1.5%;
 }
