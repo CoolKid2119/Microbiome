@@ -18,7 +18,7 @@ $(document).ready(function () {
 	});
 
    var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100;
-   $('.bootstrap-tagsinput').css('width', (100-f-0.66) + '%');
+   $('.bootstrap-tagsinput').css('width', (100-f) + '%');
 
    var cool = $(".fa-search").width() + $(".bootstrap-tagsinput").width();
    var bet = $('.fa-search').parent().width();
