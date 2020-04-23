@@ -7,6 +7,7 @@ input {
 	border-radius: 10px;
 	border: 1px solid black;
 	padding-left: 0.5%;
+	padding-right: 0.5%;
 	padding-top: 0.25%;
 	padding-bottom: 0.25%;
 	transition: all .5s linear;
@@ -27,4 +28,5 @@ input {
 
 .bootstrap-tagsinput {
   display: inline-block;
+  width: 50%;
 }
