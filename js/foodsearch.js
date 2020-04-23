@@ -1,32 +1,39 @@
+$(document).ready(function () {
+
+
+	$('#SearchString').on('input', function() {
+		alert('Text1 changed!');
+		var length = this.value.length;
+		if(length == 0){
+			$(".fa-times-circle").hide();
+		}
+		if(length == 1){
+			$(".fa-times-circle").show();
+		}
+	});
+
+	$('#SearchString').tagsinput({
+		itemValue: 'text'
+	});
+
+});
+
+function translateField(){
+	//$(".fa-times-circle").show(); nope only do this when they have typing something
+	// todo translate the whole div
+	$(".textbox").focus();
+
+}
+
 function addTag(event){
 	var name = $(event.target.outerHTML).attr("value");
-	$(".typing").html('<span class="fgtext" >' + name +  '</span>' + $(".typing").html());
-	$(".textbox").focus();
+	$('#SearchString').tagsinput('add', { id: 'tag', text: name });
+
+	$('SearchString').attr('placeholder', 'lol');
+
+	translateField();
+
 	$(".fa-times-circle").show();
 }
 
 $(document).on('click', '.fgimg', addTag);
-
-function bet(){
-	console.log('bet');
-	$(".fa-times-circle").show();
-
-}
-
-
-
-$(document).ready(function () {
-
-      $('#SearchString').tagsinput({
-          itemValue: 'text'
-      });
-
-      $checks = $(":checkbox");
-      $checks.on('change', function () {
-          $('#SearchString').tagsinput('removeAll');
-          $checks.filter(":checked").each(function( index ) {
-            	console.log( index + ": " + this.value );
-              $('#SearchString').tagsinput('add', { id: this.id, text: this.value });
-          });
-     }).trigger('change');
-});
