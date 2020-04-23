@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
 
-	$('#SearchString').on('input', function() {
-		alert('Text1 changed!');
-		var length = this.value.length;
+	$('.search').on('input', function() {
+		console.log($(this).children());
+		var value = $(this).children()[1].children[0].value;
+		var length = value.length;
 		if(length == 0){
 			$(".fa-times-circle").hide();
 		}
@@ -29,7 +30,7 @@ function addTag(event){
 	var name = $(event.target.outerHTML).attr("value");
 	$('#SearchString').tagsinput('add', { id: 'tag', text: name });
 
-	$('SearchString').attr('placeholder', 'lol');
+	$('SearchString').attr('placeholder', '');
 
 	translateField();
 

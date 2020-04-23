@@ -1,24 +1,23 @@
 input {
 	border: none;
 	outline: none;
+	background-color: #E1E1E1;
 }
 
 .search {
 	border-radius: 10px;
-	border: 1px solid black;
+	border: none;
+	background-color: #E1E1E1;
 	padding-left: 0.5%;
 	padding-right: 0.5%;
 	padding-top: 0.25%;
 	padding-bottom: 0.25%;
+	font-size: 300%;
 	transition: all .5s linear;
 }
 
 #table {
 	overflow-x: auto;
-}
-
-.textbox {
-	width: 80%;
 }
 
 .fgtext {
@@ -28,5 +27,12 @@ input {
 
 .bootstrap-tagsinput {
   display: inline-block;
-  width: 50%;
+  width: 89%;
+  overflow: wrap;
+
+}
+
+.bootstrap-tagsinput .tag {
+  background: #87888C;
+  margin-right: 0px;
 }
