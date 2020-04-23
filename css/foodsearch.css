@@ -22,12 +22,12 @@ input {
 .search {
 	border-radius: 10px;
 	border: none;
-	background-color: red; /*#E1E1E1;*/
+	background-color: #E1E1E1;
 	/*padding-left: 0.5%;*/
-	/*padding-left: 0.5%;
+	padding-left: 0.5%;
 	padding-right: 0.5%;
 	padding-top: 0.25%;
-	padding-bottom: 0.25%;*/
+	padding-bottom: 0.25%;
 	font-size: 300%;
 	transition: all .5s linear;
 	/*margin-right: 1.5%;*/
@@ -54,7 +54,7 @@ input {
 }
 
 .bootstrap-tagsinput input {
-  background: white;/*#E1E1E1;*/
+  background: #E1E1E1;
   width: 100%;
 }
 
