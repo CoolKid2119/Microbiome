@@ -17,11 +17,17 @@ $(document).ready(function () {
 		itemValue: 'text'
 	});
 
+	var so = $(".fa-times-circle").width() / $('.search').width() * 100;
+   $(".parent-circle").css("width", so + "%");
+
+
    var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100;
-   $('.bootstrap-tagsinput').css('width', (100-f) + '%');
+   $('.bootstrap-tagsinput').css('width', (100-f-so) + '%'); //you fixed the beginning but after translation will be fucked up
 
    var cool = $(".fa-search").width() + $(".bootstrap-tagsinput").width();
    var bet = $('.fa-search').parent().width();
+
+   
 
 
 	$( ".bootstrap-tagsinput input" ).on('click', function() {
@@ -43,13 +49,13 @@ function translateField(){
 	var f = $(".fa-search").width() * 1.25 / $('.fa-search').parent().width() * 100;
 	$('.bootstrap-tagsinput').css('width', (100-f) + '%');
 	$(".search").css("width", "80%");
+	$(".cancel").css("width", "14%");
 
 	$(".titlesearch").css("transform", text);
 	$(".line").css("transform", text);
 	$(".category").css("transform", text);
 	$("#table").css("transform", text);
 
-	$(".cancel").css("display", "inline");
 
 
 

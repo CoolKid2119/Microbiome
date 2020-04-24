@@ -84,4 +84,19 @@ input {
 	border: none;
 	background-color: white;
 	color: cyan;
+	display: inline-block;
+	width: 0;
+	font-size: 300%;
+	overflow: auto;
+	transition: all 0.5s;
+}
+
+.fa-times-circle {
+	background: #E1E1E1;
+	visibility: hidden;
+}
+
+.parent-circle {
+	background: #E1E1E1;
+	display: inline-block;
 }
