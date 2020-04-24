@@ -30,7 +30,7 @@ input {
 	padding-right: 0.5%;
 	padding-top: 0.25%;
 	padding-bottom: 0.25%;
-	font-size: 300%;
+	/*font-size: 300%;*/
 	transition: all 0.5s;
 	margin-right: 3%;
 	margin-left: 3%;
@@ -58,6 +58,7 @@ input {
   overflow: scroll;
   background: #E1E1E1;
   width: 100%;
+  font-size: 300%;
 
 }
 
