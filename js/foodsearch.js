@@ -42,8 +42,9 @@ $(document).ready(function () {
    var cool = $(".fa-search").width() + $(".bootstrap-tagsinput").width();
    var bet = $('.fa-search').parent().width();
 
-   
-
+   var grow = 0.5 * ($(".bootstrap-tagsinput").height() - $(".fa-search").height());
+   $(".fa-search").css("padding-top", grow + "px");
+   $(".fa-search").css("padding-bottom", grow + "px");
 
 	$( ".bootstrap-tagsinput input" ).on('click', function() {
 		translateField();
