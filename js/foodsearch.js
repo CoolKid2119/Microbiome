@@ -23,6 +23,12 @@ $(document).ready(function () {
    var cool = $(".fa-search").width() + $(".bootstrap-tagsinput").width();
    var bet = $('.fa-search').parent().width();
 
+
+	$( ".bootstrap-tagsinput input" ).on('click', function() {
+		translateField();
+	});
+
+
 });
 
 function translateField(){
@@ -31,6 +37,19 @@ function translateField(){
 
 
 	$(".bootstrap-tagsinput input").focus();
+	/*$(".search").css("width", "80%");*/
+	var f = $(".fa-search").width() * 1.25 / $('.fa-search').parent().width() * 100;
+	$('.bootstrap-tagsinput').css('width', (100-f) + '%');
+	$(".search").css("width", "80%");
+
+	$(".titlesearch").css("transform", "translateY(-230px)");
+	$(".line").css("transform", "translateY(-230px)");
+	$(".category").css("transform", "translateY(-230px)");
+	$("#table").css("transform", "translateY(-230px)");
+
+	$(".cancel").css("display", "inline");
+
+
 
 }
 

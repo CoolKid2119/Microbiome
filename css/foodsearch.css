@@ -5,8 +5,10 @@ input {
 }
 
 .titlesearch {
-	/*margin-left: 1.5%;*/
+	/*padding-top: 7%;*/
+	margin-top: 7%;
 	padding-bottom: 0.75%;
+	transition: all 0.5s;
 }
 
 .title {
@@ -18,7 +20,6 @@ input {
 .category {
 	font-size: 325%;
 	font-weight: 600;
-	padding-left: 3%;
 }
 .search {
 	border-radius: 10px;
@@ -30,9 +31,11 @@ input {
 	padding-top: 0.25%;
 	padding-bottom: 0.25%;
 	font-size: 300%;
-	transition: all .5s linear;
+	transition: all 0.5s;
 	margin-right: 3%;
 	margin-left: 3%;
+	width: 94%;
+	display:inline-block;
 
 }
 
@@ -40,10 +43,7 @@ input {
 	overflow-x: scroll;
 	padding-top: 0.5%;
 	padding-left: 3%;
-}
-
-* {
-	-webkit-overflow-scrolling: touch;
+	transition: all 0.5s;
 }
 
 .fgtext {
@@ -56,6 +56,7 @@ input {
   /*white-space: nowrap;
   overflow: scroll;*/
   background: #E1E1E1;
+  width: 100%;
 
 }
 
@@ -70,9 +71,16 @@ input {
 
 .line {
 	border-top: 1px solid black;
+	transition: all 0.5s;
 }
 
 .foodgroups {
 	padding-top: 0.5%;
 	margin-left: 1.5%;
+}
+
+.cancel {
+	border: none;
+	background-color: white;
+	color: cyan;
 }
