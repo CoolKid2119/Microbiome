@@ -54,8 +54,8 @@ input {
 
 .bootstrap-tagsinput {
   display: inline-block;
-  /*white-space: nowrap;
-  overflow: scroll;*/
+  white-space: nowrap;
+  overflow: scroll;
   background: #E1E1E1;
   width: 100%;
 
