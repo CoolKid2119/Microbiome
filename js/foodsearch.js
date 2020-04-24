@@ -38,14 +38,16 @@ function translateField(){
 
 	/*$(".bootstrap-tagsinput input").focus();*/
 	/*$(".search").css("width", "80%");*/
+	var translation = 2 * $(".title").height() + 0.07 * $(".titlesearch").parent().height();
+	var text = "translateY(-" + translation + "px)";
 	var f = $(".fa-search").width() * 1.25 / $('.fa-search').parent().width() * 100;
 	$('.bootstrap-tagsinput').css('width', (100-f) + '%');
 	$(".search").css("width", "80%");
 
-	$(".titlesearch").css("transform", "translateY(-230px)");
-	$(".line").css("transform", "translateY(-230px)");
-	$(".category").css("transform", "translateY(-230px)");
-	$("#table").css("transform", "translateY(-230px)");
+	$(".titlesearch").css("transform", text);
+	$(".line").css("transform", text);
+	$(".category").css("transform", text);
+	$("#table").css("transform", text);
 
 	$(".cancel").css("display", "inline");
 
