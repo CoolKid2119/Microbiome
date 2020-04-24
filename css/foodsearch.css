@@ -58,13 +58,13 @@ input {
   overflow: scroll;
   background: #E1E1E1;
   width: 100%;
-  font-size: 300%;
 
 }
 
 .bootstrap-tagsinput input {
   background: #E1E1E1;
   width: 100%;
+  font-size: 300%;
 }
 
 .bootstrap-tagsinput .tag {
