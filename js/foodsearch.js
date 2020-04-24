@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 
+
 	$('.search').on('input', function() {
 		console.log($(this).children());
 		var first_child = $(this).children()[1].children[0];
@@ -48,6 +49,13 @@ $(document).ready(function () {
 		translateField();
 	});
 
+	$(".cancel").css("display", "inline-block");
+	$(".cancel").css("max-width", $(".cancel").width());
+	$(".cancel").css("width", 0);
+
+	console.log($(".cancel").css("max-width"));
+	console.log("fak");
+
 
 });
 
@@ -94,9 +102,13 @@ function translateField(){
 
 	var so = $(".fa-times-circle").width() * 1.25 / $('.search').width() * 100;
 
+	var cancel_width = parseInt($(".cancel").css("max-width").slice(0,-2)) / $('.titlesearch').width() * 100;
+
+	/*$(".cancel").css("padding-right", "3%");*/
+
 	$('.bootstrap-tagsinput').css('width', (100-f-so) + '%');
-	$(".search").css("width", "80%");
-	$(".cancel").css("width", "14%");
+	$(".search").css("width", (94-cancel_width-3) + "%"); /*$(".search").css("width", "80%"); this was from before dont delete breh*/
+	$(".cancel").css("width", (cancel_width + 3) + "%"); /*$(".cancel").css("width", "14%");*/
 
 	$(".titlesearch").css("transform", text);
 	$(".line").css("transform", text);
@@ -111,6 +123,10 @@ function search_home(){
 	$(".bootstrap-tagsinput input").val('');
 	$(".fa-times-circle").css("visibility", "hidden");
 
+	/*$(".search").css("margin-right", "3%");
+	$(".cancel").css("margin-right", "0%");*/
+
+
 	var translation = 2 * $(".title").height() - 4 * 0.07 * $(".titlesearch").parent().height();
 	console.log(translation);
 	console.log("lmfao");
@@ -119,7 +135,7 @@ function search_home(){
 
 	var so = $(".fa-times-circle").width() / $('.search').width() * 100;
 
-	$(".search").css("width", "94%");
+	$(".search").css("width", "94%");/*$(".search").css("width", "97%");*/
 	$(".cancel").css("width", "0%");
 	$('.bootstrap-tagsinput').css('width', (100-f-so) + '%');
 

@@ -84,8 +84,9 @@ input {
 	border: none;
 	background-color: white;
 	color: cyan;
-	display: inline-block;
-	width: 0;
+	/*display: inline-block; this is from before, dont delete breh
+	width: 0;*/
+	display: none;
 	font-size: 300%;
 	overflow: auto;
 	transition: all 0.5s;
