@@ -36,7 +36,7 @@ function translateField(){
 	// todo translate the whole div
 
 
-	$(".bootstrap-tagsinput input").focus();
+	/*$(".bootstrap-tagsinput input").focus();*/
 	/*$(".search").css("width", "80%");*/
 	var f = $(".fa-search").width() * 1.25 / $('.fa-search').parent().width() * 100;
 	$('.bootstrap-tagsinput').css('width', (100-f) + '%');
