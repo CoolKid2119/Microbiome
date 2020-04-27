@@ -36,7 +36,7 @@ input {
 	margin-left: 3%;
 	margin-top: 1%;
 	width: 94%;
-	display:inline-block;
+	display:inline-flex;/*block;*/
 
 }
 
@@ -53,31 +53,31 @@ input {
 }
 
 .bootstrap-tagsinput {
-  display: inline-block;
+  display: inline-flex;/*block;*/
   white-space: nowrap;
   overflow: scroll;
   background: #E1E1E1;
   width: 100%;
+  flex-grow: 100%;
+
 
 }
 
 .bootstrap-tagsinput input {
   background: #E1E1E1;
-  width: 100%;
+  flex-grow: 100%;
 }
 
 .bootstrap-tagsinput .tag {
   background: #87888C;
+  font-size: 100%;
+  font-weight: 400;
+
 }
 
 .line {
 	border-top: 1px solid black;
 	transition: all 0.5s;
-}
-
-.foodgroups {
-	padding-top: 0.5%;
-	margin-left: 1.5%;
 }
 
 .cancel {
@@ -90,6 +90,9 @@ input {
 	font-size: 300%;
 	overflow: auto;
 	transition: all 0.5s;
+	padding-top: 0.25%;
+	margin-top: 1%;
+	vertical-align: top;
 }
 
 .fa-times-circle {
@@ -100,4 +103,15 @@ input {
 .parent-circle {
 	background: #E1E1E1;
 	display: inline-block;
+	vertical-align: top;
+}
+
+.fa-search {
+	color: #999;
+}
+
+.parent-search {
+	background: #E1E1E1;
+	display: inline-block;
+	vertical-align: top;
 }

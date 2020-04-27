@@ -1,83 +1,101 @@
-$(document).ready(function () {
-
-
-
-	$('.search').on('input', function() {
-		console.log($(this).children());
-		var first_child = $(this).children()[1].children[0];
-		if("type" in first_child){
-			var value = first_child.value; /* when a tag is there that will be the first child, not the input */
-			var length = value.length;
-			if(length == 0){
-				$(".fa-times-circle").css("visibility", "hidden");
-			}
-			if(length == 1){
-				$(".fa-times-circle").css("visibility", "visible");
-			}
+// Detects when user types in textbox. If there is a nonzero number of characters, present the delete button.
+// If there are zero characters, hide the delete button.
+$('.search').on('input', function() {
+	console.log($(this).children());
+	var first_child = $(this).children()[1].children[0];
+	if("type" in first_child){
+		var value = first_child.value; /* when a tag is there that will be the first child, not the input */
+		var length = value.length;
+		if(length == 0){
+			$(".fa-times-circle").css("visibility", "hidden");
 		}
-		else {
+		if(length == 1){
 			$(".fa-times-circle").css("visibility", "visible");
-			console.log("breh");
 		}
-		
-	});
+	}
+	else{
+		$(".fa-times-circle").css("visibility", "visible");
+	}
+});
 
-	$('input').on('itemRemoved', function(event) {
-		$(".fa-times-circle").css("visibility", "hidden");
-	});
+// Detects when user rmeoves tag via backspace.
+// Then removes the delete button and restores placeholder text.
+$('input').on('itemRemoved', function(event) {
+	$(".fa-times-circle").css("visibility", "hidden");
+	$(".bootstrap-tagsinput input").attr('placeholder', 'Enter food item');
+});
 
-	$('#SearchString').tagsinput({
-		itemValue: 'text',
-		allowDuplicates: true
-	});
+// Convert SearchString into bootstrap tagsinput
+$('#SearchString').tagsinput({
+	itemValue: 'text',
+	allowDuplicates: true
+});
 
-	var so = $(".fa-times-circle").width() / $('.search').width() * 100;
-   $(".parent-circle").css("width", $(".fa-times-circle").width()  + "px");
+	//$(window).on("load", function() { //wait for FA icons to load
+
+		console.log('big bro is watching')
+		var so = $(".fa-times-circle").width() / $('.search').width() * 100;
+		//$(".parent-circle").css("width", $(".fa-times-circle").width()  + "px"); uncomment this pls
    /*$(".parent-circle").css("width", so + "%");*/
 
 
-   var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100;
-   $('.bootstrap-tagsinput').css('width', (100-f-so) + '%'); //you fixed the beginning but after translation will be fucked up
+		var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100;
 
-   var cool = $(".fa-search").width() + $(".bootstrap-tagsinput").width();
-   var bet = $('.fa-search').parent().width();
+		console.log('fcocococo');
+		console.log(f)
+		console.log(so)
+		//$('.bootstrap-tagsinput').css('width', (100-f-so) + '%'); //you fixed the beginning but after translation will be fucked up
 
-   var grow = 0.5 * ($(".bootstrap-tagsinput").height() - $(".fa-search").height());
-   $(".fa-search").css("padding-top", grow + "px");
-   $(".fa-search").css("padding-bottom", grow + "px");
-
-	$( ".bootstrap-tagsinput input" ).on('click', function() {
-		translateField();
-	});
-
-	$(".cancel").css("display", "inline-block");
+		$(".cancel").css("display", "inline-block");
 	$(".cancel").css("max-width", $(".cancel").width());
 	$(".cancel").css("width", 0);
 
 	console.log($(".cancel").css("max-width"));
 	console.log("fak");
 
+	//});
+	
 
-});
+   var cool = $(".fa-search").width() + $(".bootstrap-tagsinput").width();
+   var bet = $('.fa-search').parent().width();
+
+   /*var grow = 0.5 * ($(".bootstrap-tagsinput").height() - $(".fa-search").height());
+   $(".fa-search").css("padding-top", grow + "px");
+   $(".fa-search").css("padding-bottom", grow + "px");*/
+
+	$( ".bootstrap-tagsinput input" ).on('click', function() {
+		translateField();
+	});
+
+	/*$(".cancel").css("display", "inline-block");
+	$(".cancel").css("max-width", $(".cancel").width());
+	$(".cancel").css("width", 0);
+
+	console.log($(".cancel").css("max-width"));
+	console.log("fak");*/
+
+
+//});
 
 function clearText(){
 	$(".fa-times-circle").css("visibility", "hidden");
+	$(".bootstrap-tagsinput input").attr('placeholder', "Enter food item");
 	$(".bootstrap-tagsinput input").val('').focus();
 
 	$(".bootstrap-tagsinput span").remove();
 
 	var so = $(".fa-times-circle").width() / $('.search').width() * 100;
-   $(".parent-circle").css("width", so + "%");
+   //$(".parent-circle").css("width", so + "%"); just changed this
 
 
    var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100;
-   $('.bootstrap-tagsinput').css('width', (100-f-so) + '%');
+   //$('.bootstrap-tagsinput').css('width', (100-f-so) + '%'); just changed this
 	/*$(".bootstrap-tagsinput").filter(function() {
 		var $this = $(this);
 		return $this.css("display") == "none";
 	}).remove();*/
 
-	$(".bootstrap-tagsinput input").css("width", "100%");
+	//$(".bootstrap-tagsinput input").css("width", "100%"); just changed this
 	/*$(".bootstrap-tagsinput input").attr("placeholder", "Enter food item");*/
 
 
@@ -95,8 +113,11 @@ function translateField(){
 
 	/*$(".bootstrap-tagsinput input").focus();*/
 	/*$(".search").css("width", "80%");*/
-	var translation = 2 * $(".title").height() + 0.07 * $(".titlesearch").parent().height();
-	console.log(translation);
+	//var translation = 2 * $(".title").height() + 0.07 * $(".titlesearch").parent().height();
+	var scrollTop = $(window).scrollTop();
+    var elementOffset = $('.search').offset().top;
+    var translation = elementOffset - scrollTop - 0.20 * $('.search').height();
+	//var translation = $(".titlesearch").height() * 0.07 + $(".search").height() * 0.01;
 	console.log('bet');
 	var text = "translateY(-" + translation + "px)";
 	var f = $(".fa-search").width() * 1.25 / $('.fa-search').parent().width() * 100;
@@ -107,9 +128,13 @@ function translateField(){
 
 	/*$(".cancel").css("padding-right", "3%");*/
 
-	$('.bootstrap-tagsinput').css('width', (100-f-so) + '%');
+	console.log('brehhhh')
+	console.log(f)
+	console.log(so)
+	//$('.bootstrap-tagsinput').css('width', (100-f-so) + '%');
 	$(".search").css("width", (94-cancel_width-3) + "%"); /*$(".search").css("width", "80%"); this was from before dont delete breh*/
 	$(".cancel").css("width", (cancel_width + 3) + "%"); /*$(".cancel").css("width", "14%");*/
+	$(".cancel").css("display", "inline-block");
 
 	$(".titlesearch").css("transform", text);
 	$(".line").css("transform", text);
@@ -123,6 +148,7 @@ function search_home(){
 	$(".bootstrap-tagsinput input").css("width", "100%");
 	$(".bootstrap-tagsinput input").val('');
 	$(".fa-times-circle").css("visibility", "hidden");
+	$(".bootstrap-tagsinput input").attr('placeholder', "Enter food item");
 
 	/*$(".search").css("margin-right", "3%");
 	$(".cancel").css("margin-right", "0%");*/
@@ -138,7 +164,7 @@ function search_home(){
 
 	$(".search").css("width", "94%");/*$(".search").css("width", "97%");*/
 	$(".cancel").css("width", "0%");
-	$('.bootstrap-tagsinput').css('width', (100-f-so) + '%');
+	//$('.bootstrap-tagsinput').css('width', (100-f-so) + '%');
 
 	$(".titlesearch").css("transform", text);
 	$(".line").css("transform", text);
@@ -153,7 +179,7 @@ function addTag(event){
 	var name = $(event.target.outerHTML).attr("value");
 	$('#SearchString').tagsinput('add', { id: 'tag', text: name });
 
-	$('SearchString').attr('placeholder', '');
+	$(".bootstrap-tagsinput input").attr('placeholder', '');
 
 
 	translateField();

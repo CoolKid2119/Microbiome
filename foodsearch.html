@@ -1,66 +1,56 @@
 <!DOCTYPE html>
-
 <html>
+	<head>
+		<meta name="viewport" content="user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/foodsearch.css">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+	</head>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="css/foodsearch.css">
+	<div class="titlesearch">
 
-    <script src="https://use.fontawesome.com/3fc8bf9443.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/foodsearch.js"></script>
+		<span class="title"> Food Search </span>
 
-    <meta name="viewport" content="user-scalable=no">
+		<div class="search">
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+			<!-- <i class="fa fa-search" style="background: #E1E1E1; color: #999; margin: 0 !important; font-size: 100% !important;"></i> -->
+			<div class="parent-search"> <span class="fa fa-search"></span> </div>
+			<input class="form-control" id="SearchString" type="text" placeholder="Enter food item" style="display: none;">
+			<div class="parent-circle"> <span class="fa fa-times-circle" onclick=clearText()></span> </div>
 
-    <script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
-</head>
+		</div><!--
 
-<div class="titlesearch">
+		--><span class="cancel" onclick=search_home()> Cancel </span>
 
-<span class="title"> Food Search </span>
+	</div>
 
-<div class="search">
+	<div class="line"> </div>
 
-	<i class="fa fa-search" style="background: #E1E1E1; color: #999; margin: 0 !important; font-size: 100% !important;"></i><!--
+	<div id="table">
 
-	--><input class="form-control" id="SearchString" type="text" placeholder="Enter food item"><!--
+		<span class="category"> Food Groups </span>
 
-	--><span class="parent-circle"> <span class="fa fa-times-circle" onclick=clearText()></span> </span> <!--
+		<table>
+			<tr>
+				<td style="padding:0 15px 0 0;"> <img src="fruits.png" class="fgimg" value="Fruits" > </td>
+				<td style="padding:0 15px 0 15px;"> <img src="vegetables.png" class="fgimg" value="Vegetables"> </td>
+				<td style="padding:0 15px 0 15px;"> <img src="grains.png" class="fgimg" value="Grains"> </td>
+				<td style="padding:0 15px 0 15px;"> <img src="protein.png" class="fgimg" value="Protein"> </td>
+				<td style="padding:0 15px 0 15px;"> <img src="dairy.png" class="fgimg" value="Dairy"> </td>
+			</tr>
+		</table>
 
---></div><!--
+	</div>
 
---><span class="cancel" onclick=search_home()> Cancel </span> 
+	commercial dang
 
-
-</div>
-
-<div class="line"> </div>
-
-<!-- <div class="foodgroups"> -->
-
-<div id="table">
-
-<span class="category"> Food Groups </span>
-<table>
-	<tr>
-		<td style="padding:0 15px 0 0;"> <img src="fruits.png" class="fgimg" value="Fruits" > </td>
-		<td style="padding:0 15px 0 15px;"> <img src="vegetables.png" class="fgimg" value="Vegetables"> </td>
-		<td style="padding:0 15px 0 15px;"> <img src="grains.png" class="fgimg" value="Grains"> </td>
-		<td style="padding:0 15px 0 15px;"> <img src="protein.png" class="fgimg" value="Protein"> </td>
-		<td style="padding:0 15px 0 15px;"> <img src="dairy.png" class="fgimg" value="Dairy"> </td>
-	</tr>
-</table>
-</div>
-
-<!-- </div> -->
-commercial
-
-
-
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
 <!-- <link href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet" />  -->
+
+	<script src="https://use.fontawesome.com/3fc8bf9443.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+	<script src="js/foodsearch.js"></script> 
 
 
 </html>
