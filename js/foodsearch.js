@@ -1,3 +1,34 @@
+function displayResults(search_string){
+	$("#table").css("display", "none");
+	var data = [["BACON MAPLE VIRGINIA PEANUTS", "Popcorn, Peanuts, Seeds & Related Snacks", "Whitley Peanut Factory, Inc"],
+	["SLICED BACON", "Frozen Bacon, Sausages & Ribs", "John F Martin & Sons Inc"],
+	["PORK & BACON HASH", "Chili & Stew", "Hormel Foods Corporation"]];
+	var keywords = ['desc', 'food_cat', 'owner'];
+	var html = "";
+
+
+	for(var i = 0; i < data.length; i++){
+		var curArr = data[i];
+		if(i > 0){
+			html += "<hr class='item_divison'>";
+		}
+		html += "<table>"
+		for(var j = 0; j < curArr.length; j++){
+			if(j == 0){
+				html += "<tr> <td rowspan=3 class='imgcell'> <img class='img' src='" + (i+1) + ".jpg'> </td>"
+				html += '<td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
+			}
+			else {
+				html += '<tr> <td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
+			}
+		}
+		html += "</table>";
+	}
+
+	$("#search_results").html(html);
+
+}
+
 // Detects when user types in textbox. If there is a nonzero number of characters, present the delete button.
 // If there are zero characters, hide the delete button.
 $('.search').on('input', function() {
@@ -8,13 +39,17 @@ $('.search').on('input', function() {
 		var length = value.length;
 		if(length == 0){
 			$(".fa-times-circle").css("visibility", "hidden");
+			$("#search_results").html("");
+			$("#table").css("display", "inline");
 		}
 		if(length == 1){
 			$(".fa-times-circle").css("visibility", "visible");
+			displayResults(value);
 		}
 	}
 	else{
 		$(".fa-times-circle").css("visibility", "visible");
+		displayResults(value);
 	}
 });
 
@@ -31,51 +66,14 @@ $('#SearchString').tagsinput({
 	allowDuplicates: true
 });
 
-	//$(window).on("load", function() { //wait for FA icons to load
-
-		console.log('big bro is watching')
-		var so = $(".fa-times-circle").width() / $('.search').width() * 100;
-		//$(".parent-circle").css("width", $(".fa-times-circle").width()  + "px"); uncomment this pls
-   /*$(".parent-circle").css("width", so + "%");*/
-
-
-		var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100;
-
-		console.log('fcocococo');
-		console.log(f)
-		console.log(so)
-		//$('.bootstrap-tagsinput').css('width', (100-f-so) + '%'); //you fixed the beginning but after translation will be fucked up
-
-		$(".cancel").css("display", "inline-block");
-	$(".cancel").css("max-width", $(".cancel").width());
-	$(".cancel").css("width", 0);
-
-	console.log($(".cancel").css("max-width"));
-	console.log("fak");
-
-	//});
+$(".cancel").css("display", "inline-block");
+$(".cancel").css("max-width", $(".cancel").width());
+$(".cancel").css("width", 0);
 	
 
-   var cool = $(".fa-search").width() + $(".bootstrap-tagsinput").width();
-   var bet = $('.fa-search').parent().width();
-
-   /*var grow = 0.5 * ($(".bootstrap-tagsinput").height() - $(".fa-search").height());
-   $(".fa-search").css("padding-top", grow + "px");
-   $(".fa-search").css("padding-bottom", grow + "px");*/
-
-	$( ".bootstrap-tagsinput input" ).on('click', function() {
-		translateField();
-	});
-
-	/*$(".cancel").css("display", "inline-block");
-	$(".cancel").css("max-width", $(".cancel").width());
-	$(".cancel").css("width", 0);
-
-	console.log($(".cancel").css("max-width"));
-	console.log("fak");*/
-
-
-//});
+$( ".bootstrap-tagsinput input" ).on('click', function() {
+	translateField();
+});
 
 function clearText(){
 	$(".fa-times-circle").css("visibility", "hidden");
@@ -83,40 +81,13 @@ function clearText(){
 	$(".bootstrap-tagsinput input").val('').focus();
 
 	$(".bootstrap-tagsinput span").remove();
-
-	var so = $(".fa-times-circle").width() / $('.search').width() * 100;
-   //$(".parent-circle").css("width", so + "%"); just changed this
-
-
-   var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100;
-   //$('.bootstrap-tagsinput').css('width', (100-f-so) + '%'); just changed this
-	/*$(".bootstrap-tagsinput").filter(function() {
-		var $this = $(this);
-		return $this.css("display") == "none";
-	}).remove();*/
-
-	//$(".bootstrap-tagsinput input").css("width", "100%"); just changed this
-	/*$(".bootstrap-tagsinput input").attr("placeholder", "Enter food item");*/
-
-
-	/*console.log($(".bootstrap-tagsinput").tagsinput('items'));
-	$(".bootstrap-tagsinput").tagsinput("remove", { id: 'tag', text: "Vegetables" });*/
-	/*$(".bootstrap-tagsinput input").css("width", "100%");*/
-
-
 }
 
 function translateField(){
-	//$(".fa-times-circle").show(); nope only do this when they have typing something
-	// todo translate the whole div
-
-
-	/*$(".bootstrap-tagsinput input").focus();*/
-	/*$(".search").css("width", "80%");*/
-	//var translation = 2 * $(".title").height() + 0.07 * $(".titlesearch").parent().height();
 	var scrollTop = $(window).scrollTop();
     var elementOffset = $('.search').offset().top;
     var translation = elementOffset - scrollTop - 0.20 * $('.search').height();
+    console.log(translation);
 	//var translation = $(".titlesearch").height() * 0.07 + $(".search").height() * 0.01;
 	console.log('bet');
 	var text = "translateY(-" + translation + "px)";
@@ -140,6 +111,10 @@ function translateField(){
 	$(".line").css("transform", text);
 	$(".category").css("transform", text);
 	$("#table").css("transform", text);
+	$("#search_results").css("transform", text);
+
+
+
 }
 
 function search_home(){
@@ -150,12 +125,8 @@ function search_home(){
 	$(".fa-times-circle").css("visibility", "hidden");
 	$(".bootstrap-tagsinput input").attr('placeholder', "Enter food item");
 
-	/*$(".search").css("margin-right", "3%");
-	$(".cancel").css("margin-right", "0%");*/
-
-
-	var translation = 2 * $(".title").height() - 4 * 0.07 * $(".titlesearch").parent().height();
-	console.log(translation);
+	//var translation = 2 * $(".title").height() - 4 * 0.07 * $(".titlesearch").parent().height();
+	var translation = 0;
 	console.log("lmfao");
 	var text = "translateY(" + translation + "px)";
 	var f = $(".fa-search").width() / $('.fa-search').parent().width() * 100; /* uhh why did we need 1.25 above and not here */
@@ -169,7 +140,14 @@ function search_home(){
 	$(".titlesearch").css("transform", text);
 	$(".line").css("transform", text);
 	$(".category").css("transform", text);
+
+	$("#table").css("display", "block");
 	$("#table").css("transform", text);
+
+	$("#search_results").html("");
+	$("#search_results").css("transform", text);
+
+
 
 
 	
@@ -197,6 +175,8 @@ function addTag(event){
 
 	$(".bootstrap-tagsinput input").val('').focus();
 	$(".fa-times-circle").css("visibility", "visible");
+
+	displayResults(name);
 
 
 }

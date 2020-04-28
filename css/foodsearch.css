@@ -47,6 +47,10 @@ input {
 	transition: all 0.5s;
 }
 
+/*#breh {
+	overflow-x: scroll;
+}*/
+
 .fgtext {
 	background-color: black;
 	color: white;
@@ -59,6 +63,8 @@ input {
   background: #E1E1E1;
   width: 100%;
   flex-grow: 100%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
 
 
 }
@@ -114,4 +120,46 @@ input {
 	background: #E1E1E1;
 	display: inline-block;
 	vertical-align: top;
+}
+
+#search_results {
+	padding-left: 3%;
+}
+
+.desc {
+	font-size: 300%;
+	font-weight: 500;
+}
+
+.food_cat {
+	font-size: 200%;
+}
+
+.owner {
+	font-size: 200%;
+}
+
+.img {
+	border-radius: 5px;
+	border: 1px solid white;
+	height: 7em;
+	width: 7em;
+	padding-right: 8%;
+}
+
+.imgcell {
+}
+
+#search_results table {
+	border-collapse: collapse;
+	margin-top: 1%;
+}
+
+#search_results {
+	line-height: 1;
+	padding-right: 3%;
+}
+
+.item_divison {
+	border-top: 1px solid #d6d4d3;
 }
