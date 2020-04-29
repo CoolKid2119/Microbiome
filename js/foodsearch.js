@@ -58,6 +58,9 @@ $('.search').on('input', function() {
 $('input').on('itemRemoved', function(event) {
 	$(".fa-times-circle").css("visibility", "hidden");
 	$(".bootstrap-tagsinput input").attr('placeholder', 'Enter food item');
+
+	$("#search_results").html("");
+	$("#table").css("display", "block");
 });
 
 // Convert SearchString into bootstrap tagsinput
