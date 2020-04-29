@@ -40,7 +40,7 @@ $('.search').on('input', function() {
 		if(length == 0){
 			$(".fa-times-circle").css("visibility", "hidden");
 			$("#search_results").html("");
-			$("#table").css("display", "inline");
+			$("#table").css("display", "block");
 		}
 		if(length == 1){
 			$(".fa-times-circle").css("visibility", "visible");
@@ -81,6 +81,9 @@ function clearText(){
 	$(".bootstrap-tagsinput input").val('').focus();
 
 	$(".bootstrap-tagsinput span").remove();
+
+	$("#search_results").html("");
+	$("#table").css("display", "block");
 }
 
 function translateField(){
