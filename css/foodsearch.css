@@ -45,6 +45,7 @@ input {
 	padding-top: 0.5%;
 	padding-left: 3%;
 	transition: all 0.5s;
+	-webkit-overflow-scrolling: touch;
 }
 
 .fgtext {
