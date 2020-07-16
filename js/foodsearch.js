@@ -114,10 +114,12 @@ function translateField(){
 	$(".cancel").css("display", "inline-block");
 
 	$(".titlesearch").css("transform", text);
-	$(".line").css("transform", text);
+	
 	$(".category").css("transform", text);
 	$("#table").css("transform", text);
 	$("#search_results").css("transform", text);
+
+	$(".line").css("transform", text);
 
 
 
