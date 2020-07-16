@@ -74,8 +74,7 @@ $(".cancel").css("max-width", $(".cancel").width());
 $(".cancel").css("width", 0);
 	
 
-$( ".bootstrap-tagsinput input" ).on('click', function(e) {
-	e.preventDefault();
+$( ".bootstrap-tagsinput input" ).on('click', function() {
 	translateField();
 });
 
