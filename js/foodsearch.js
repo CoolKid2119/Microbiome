@@ -119,11 +119,11 @@ function translateField(){
 	$("#table").css("will-change", 'transform');
 	$("#search_results").css("will-change", 'transform');
 
-	$(".titlesearch").css("transition", 'transform 300ms linear');
-	$(".line").css("transition", 'transform 300ms linear');
-	$(".category").css("transition", 'transform 300ms linear');
-	$("#table").css("transition", 'transform 300ms linear');
-	$("#search_results").css("transition", 'transform 300ms linear');
+	/*$(".titlesearch").css("transition", 'transform 300ms');
+	$(".line").css("transition", 'transform 300ms');
+	$(".category").css("transition", 'transform 300ms');
+	$("#table").css("transition", 'transform 300ms');
+	$("#search_results").css("transition", 'transform 300ms');*/
 
 
 	$(".titlesearch").css("transform", text);
