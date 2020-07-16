@@ -15,7 +15,7 @@ function displayResults(search_string){
 		html += "<table>"
 		for(var j = 0; j < curArr.length; j++){
 			if(j == 0){
-				html += "<tr> <td rowspan=3 class='imgcell'> <img class='img' src='" + (i+1) + ".jpg'> </td>"
+				html += "<tr> <td rowspan=3 class='imgcell'> <img class='img' src='images/" + (i+1) + ".jpg'> </td>"
 				html += '<td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
 			}
 			else {
@@ -75,6 +75,7 @@ $(".cancel").css("width", 0);
 	
 
 $( ".bootstrap-tagsinput input" ).on('click', function() {
+	e.preventDefault();
 	translateField();
 });
 
