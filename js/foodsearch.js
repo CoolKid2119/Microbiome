@@ -113,13 +113,13 @@ function translateField(){
 	$(".cancel").css("width", (cancel_width + 3) + "%"); /*$(".cancel").css("width", "14%");*/
 	$(".cancel").css("display", "inline-block");
 
-	$(".titlesearch").css("transform", text);
+	$(".titlesearch").css("-webkit-transform", text);
 	
-	$(".category").css("transform", text);
-	$("#table").css("transform", text);
-	$("#search_results").css("transform", text);
+	$(".category").css("-webkit-transform", text);
+	$("#table").css("-webkit-transform", text);
+	$("#search_results").css("-webkit-transform", text);
 
-	$(".line").css("transform", text);
+	$(".line").css("-webkit-transform", text);
 
 
 
@@ -145,15 +145,15 @@ function search_home(){
 	$(".cancel").css("width", "0%");
 	//$('.bootstrap-tagsinput').css('width', (100-f-so) + '%');
 
-	$(".titlesearch").css("transform", text);
-	$(".line").css("transform", text);
-	$(".category").css("transform", text);
+	$(".titlesearch").css("-webkit-transform", text);
+	$(".line").css("-webkit-transform", text);
+	$(".category").css("-webkit-transform", text);
 
 	$("#table").css("display", "block");
-	$("#table").css("transform", text);
+	$("#table").css("-webkit-transform", text);
 
 	$("#search_results").html("");
-	$("#search_results").css("transform", text);
+	$("#search_results").css("-webkit-transform", text);
 
 
 
