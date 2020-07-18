@@ -105,6 +105,7 @@ input {
 .fa-times-circle {
 	background: #E1E1E1;
 	visibility: hidden;
+	vertical-align: middle;
 }
 
 .parent-circle {
@@ -117,6 +118,7 @@ input {
 
 .fa-search {
 	color: #999;
+	vertical-align: middle;
 }
 
 .parent-search {
