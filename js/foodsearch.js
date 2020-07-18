@@ -25,7 +25,7 @@ function displayResults(search_string){
 		}
 		html += "</table>";*/
 
-		html += "div class='food'>";
+		html += "<div class='food'>";
 
 		for(var j = 0; j < curArr.length; j++){
 			html += '<div class="' + keywords[j] + '">' + curArr[j] + '</div>';
