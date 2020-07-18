@@ -95,11 +95,12 @@ input {
 	width: 0;*/
 	display: none;
 	font-size: 300%;
-	overflow: auto;
+	/*overflow: auto;*/
 	transition: all 0.5s;
-	padding-top: 0.25%;
+	/*padding-top: 0.25%;
 	margin-top: 1%;
-	vertical-align: top;
+	vertical-align: top;*/
+	vertical-align: super;
 }
 
 .fa-times-circle {
