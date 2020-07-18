@@ -1,9 +1,9 @@
 function displayResults(search_string){
 	$("#table").css("display", "none");
-	var data = [["BACON MAPLE VIRGINIA PEANUTS", "Popcorn, Peanuts, Seeds & Related Snacks", "Whitley Peanut Factory, Inc"],
-	["SLICED BACON", "Frozen Bacon, Sausages & Ribs", "John F Martin & Sons Inc"],
-	["PORK & BACON HASH", "Chili & Stew", "Hormel Foods Corporation"]];
-	var keywords = ['desc', 'food_cat', 'owner'];
+	var data = [["BACON MAPLE VIRGINIA PEANUTS", "Popcorn, Peanuts, Seeds & Related Snacks"],
+	["SLICED BACON", "Frozen Bacon, Sausages & Ribs"],
+	["PORK & BACON HASH", "Chili & Stew"]];
+	var keywords = ['desc', 'food_cat'];
 	var html = "";
 
 
