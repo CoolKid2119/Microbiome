@@ -15,8 +15,9 @@ function displayResults(search_string){
 		html += "<table>"
 		for(var j = 0; j < curArr.length; j++){
 			if(j == 0){
-				html += "<tr> <td rowspan=3 class='imgcell'> <img class='img' src='images/" + (i+1) + ".jpg'> </td>"
-				html += '<td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
+				//html += "<tr> <td rowspan=3 class='imgcell'> <img class='img' src='images/" + (i+1) + ".jpg'> </td>"
+				//html += '<td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>';
+				html += '<tr> <td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
 			}
 			else {
 				html += '<tr> <td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
