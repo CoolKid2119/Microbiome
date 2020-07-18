@@ -90,7 +90,7 @@ input {
 .cancel {
 	border: none;
 	background-color: white;
-	color: cyan;
+	color: #007AFF;
 	/*display: inline-block; this is from before, dont delete breh
 	width: 0;*/
 	display: none;
