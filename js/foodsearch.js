@@ -9,7 +9,7 @@ function displayResults(search_string){
 
 	for(var i = 0; i < data.length; i++){
 		var curArr = data[i];
-		if(i > 0){
+		/*if(i > 0){
 			html += "<hr class='item_divison'>";
 		}
 		html += "<table>"
@@ -23,7 +23,15 @@ function displayResults(search_string){
 				html += '<tr> <td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
 			}
 		}
-		html += "</table>";
+		html += "</table>";*/
+
+		html += "div class='food'>";
+
+		for(var j = 0; j < curArr.length; j++){
+			html += '<div class="' + keywords[j] + '">' + curArr[j] + '</div>';
+		}
+
+		html += "</div>";
 	}
 
 	$("#search_results").html(html);
