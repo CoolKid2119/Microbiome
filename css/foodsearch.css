@@ -109,8 +109,10 @@ input {
 
 .parent-circle {
 	background: #E1E1E1;
-	display: inline-block;
-	vertical-align: top;
+	/*display: inline-block;
+	vertical-align: top;*/
+	font-size: 120%;
+	padding-right: 1%;
 }
 
 .fa-search {
