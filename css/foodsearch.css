@@ -132,6 +132,9 @@ input {
 	padding-right: 1%;
 }
 
+.food {
+	border-bottom: 1px solid black;
+}
 
 .desc {
 	font-size: 300%;
@@ -147,10 +150,6 @@ input {
 	padding-left: 3%;
 }
 
-.food {
-	border-bottom: 1px solid black;
-}
-
 .owner {
 	font-size: 200%;
 }
@@ -161,9 +160,6 @@ input {
 	height: 7em;
 	width: 7em;
 	padding-right: 8%;
-}
-
-.imgcell {
 }
 
 #search_results table {

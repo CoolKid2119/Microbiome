@@ -36,8 +36,8 @@ else{
 		var e = split_array[i].split('$');
 		if(e.length == 3){
 			html += "<div id=" + e[0] + " class='food'>";
-			html += "<div class='name'>" + e[1] + "</div>";
-			html += "<div class='cat'>" + e[2] + "</div>";
+			html += "<div class='desc'>" + e[1] + "</div>";
+			html += "<div class='food_cat'>" + e[2] + "</div>";
 			html += "</div>";
 		}
 		else{
@@ -45,8 +45,8 @@ else{
 			for(var j = 1; j < e.length; j += 3){
 				var s = e.slice(j, j + 3);
 				html += "<div id=" + s[0] + " class='food'>";
-				html += "<div class='name'>" + s[1] + "</div>";
-				html += "<div class='cat'>" + s[2] + "</div>";
+				html += "<div class='desc'>" + s[1] + "</div>";
+				html += "<div class='food_cat'>" + s[2] + "</div>";
 				html += "</div>";
 			}
 		}

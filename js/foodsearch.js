@@ -61,12 +61,29 @@ function displayResults(search_string){
 	for(var i = 0; i < foods.length; i++){
 		foods[i].addEventListener('click', function(){
 			var plate_string = atob(getCookie('plate_list'));
+
 			if(plate_string != ''){
-				plate_string += '~';
+				var split_array = plate_string.split('~');
+				var exists = false;
+				for(var j = 0; j < split_array.length; j++){
+					var cur_id = split_array[j].split('$')[0];
+					if(cur_id == this.id){
+						exists = true;
+						break;
+					}
+				}
+				if(exists){
+					alert('This item has already been added to the plate');
+					return;
+				}
+				else{
+					plate_string += '~';
+				}
 			}
+
 			plate_string += this.id + '$' + this.children[0].innerHTML + '$' + this.children[1].innerHTML;
 			setCookie('plate_list', btoa(plate_string));
-			
+
 			window.location = 'file:///Users/audylebovitz/Desktop/Microbiome/plate.html';
 		});
 	}

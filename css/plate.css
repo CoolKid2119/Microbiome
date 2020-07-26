@@ -1,6 +1,10 @@
+/* 1. Global wide formatting */ 
+
 html{
 	font-family: sans-serif;
 }
+
+/* 2. Header */
 
 .buttons{
 	font-size: 600%;
@@ -13,6 +17,28 @@ html{
 	margin-left: 3%;
 }
 
+/* 3. Empty plate div */
+
 #empty{
 	font-size: 300%;
+}
+
+/* 4. Plate elements */
+
+.food {
+	border-bottom: 1px solid black;
+}
+
+.desc {
+	font-size: 300%;
+	font-weight: 500;
+	padding-top: 1.5%;
+	padding-left: 3%;
+}
+
+.food_cat {
+	font-size: 200%;
+	padding-top: 1%;
+	padding-bottom: 1.5%;
+	padding-left: 3%;
 }
