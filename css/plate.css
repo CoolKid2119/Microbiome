@@ -1,0 +1,18 @@
+html{
+	font-family: sans-serif;
+}
+
+.buttons{
+	font-size: 600%;
+	margin-left: 3%;
+}
+
+.title{
+	font-size: 600%;
+	font-weight: 600;
+	margin-left: 3%;
+}
+
+#empty{
+	font-size: 300%;
+}

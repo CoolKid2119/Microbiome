@@ -132,9 +132,6 @@ input {
 	padding-right: 1%;
 }
 
-#search_results {
-	padding-left: 3%;
-}
 
 .desc {
 	font-size: 300%;
@@ -176,7 +173,6 @@ input {
 
 #search_results {
 	line-height: 1;
-	padding-right: 3%;
 }
 
 .item_divison {

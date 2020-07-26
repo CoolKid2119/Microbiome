@@ -1,8 +1,30 @@
+function getCookie(tag){
+	var pairs = document.cookie.split('; ');
+	for(var i = 0; i < pairs.length; i++){
+		var data = pairs[i].split('=');
+		if(data[0] == tag){
+			return data[1];
+		}
+	}
+	return '';
+}
+
+function setCookie(tag, param){
+	document.cookie = tag + "=" + param;
+}
+
+var plate_string = getCookie('plate_list');
+
+if(plate_string == ''){
+	var empty = [];
+	setCookie('plate_list', btoa(JSON.stringify(empty)));
+}
+
 function displayResults(search_string){
 	$("#table").css("display", "none");
-	var data = [["BACON MAPLE VIRGINIA PEANUTS", "Popcorn, Peanuts, Seeds & Related Snacks"],
-	["SLICED BACON", "Frozen Bacon, Sausages & Ribs"],
-	["PORK & BACON HASH", "Chili & Stew"]];
+	var data = [[225, "BACON MAPLE VIRGINIA PEANUTS", "Popcorn, Peanuts, Seeds and Related Snacks"],
+	[229, "SLICED BACON", "Frozen Bacon, Sausages and Ribs"],
+	[230, "PORK AND BACON HASH", "Chili and Stew"]];
 	var keywords = ['desc', 'food_cat'];
 	var html = "";
 
@@ -25,16 +47,29 @@ function displayResults(search_string){
 		}
 		html += "</table>";*/
 
-		html += "<div class='food'>";
+		html += "<div id=" + curArr[0] + " class='food'>";
 
-		for(var j = 0; j < curArr.length; j++){
-			html += '<div class="' + keywords[j] + '">' + curArr[j] + '</div>';
-		}
+		html += '<div class=desc>' + curArr[1] + '</div>';
+		html += '<div class=food_cat>' + curArr[2] + '</div>';
 
 		html += "</div>";
 	}
 
 	$("#search_results").html(html);
+
+	var foods = document.getElementsByClassName('food');
+	for(var i = 0; i < foods.length; i++){
+		foods[i].addEventListener('click', function(){
+			var plate_string = atob(getCookie('plate_list'));
+			if(plate_string != ''){
+				plate_string += '~';
+			}
+			plate_string += this.id + '$' + this.children[0].innerHTML + '$' + this.children[1].innerHTML;
+			setCookie('plate_list', btoa(plate_string));
+			
+			window.location = 'file:///Users/audylebovitz/Desktop/Microbiome/plate.html';
+		});
+	}
 
 }
 

@@ -1,18 +1,29 @@
 <head>
     <script src="https://use.fontawesome.com/3fc8bf9443.js"></script>
-    <script src="js/plate.js"> </script>
+    <link rel="stylesheet" type="text/css" href="css/plate.css">
 </head>
 
-Plate
+<div class="buttons">
+	<span class="fa fa-plus" onclick=toSearch()></span>
 
-<span class="fa fa-plus" onclick=toSearch()></span>
+	<span class="fa fa-folder-open" onclick=toSearch()></span>
 
-<span class="fa fa-bar-chart" onclick=toAnalysis()></span>
-
-<hr>
-
-Your plate is empty.
+	<span class="fa fa-bar-chart" onclick=toAnalysis()></span>
+</div>
 
 <br>
 
-<img src="https://cdn.clipart.email/ea3acceb9f6c812ea71e98456b0c7c64_dinner-plate-clipart-3-clipart-station_494-347.jpeg">
+<div class="title"> Plate </div>
+
+<hr>
+
+<div id="plate"> </div>
+
+<div id="empty"> Your plate is empty.
+
+<br>
+
+<img src="https://cdn.clipart.email/ea3acceb9f6c812ea71e98456b0c7c64_dinner-plate-clipart-3-clipart-station_494-347.jpeg" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
+
+ </div>
+<script src="js/plate.js"> </script>
