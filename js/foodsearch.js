@@ -16,8 +16,7 @@ function setCookie(tag, param){
 var plate_string = getCookie('plate_list');
 
 if(plate_string == ''){
-	var empty = [];
-	setCookie('plate_list', btoa(JSON.stringify(empty)));
+	setCookie('plate_list', btoa(JSON.stringify([])));
 }
 
 function displayResults(search_string){
@@ -31,21 +30,6 @@ function displayResults(search_string){
 
 	for(var i = 0; i < data.length; i++){
 		var curArr = data[i];
-		/*if(i > 0){
-			html += "<hr class='item_divison'>";
-		}
-		html += "<table>"
-		for(var j = 0; j < curArr.length; j++){
-			if(j == 0){
-				//html += "<tr> <td rowspan=3 class='imgcell'> <img class='img' src='images/" + (i+1) + ".jpg'> </td>"
-				//html += '<td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>';
-				html += '<tr> <td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
-			}
-			else {
-				html += '<tr> <td class="' + keywords[j] + '">' + curArr[j] + '</td> </tr>'; 
-			}
-		}
-		html += "</table>";*/
 
 		html += "<div id=" + curArr[0] + " class='food'>";
 
@@ -60,30 +44,27 @@ function displayResults(search_string){
 	var foods = document.getElementsByClassName('food');
 	for(var i = 0; i < foods.length; i++){
 		foods[i].addEventListener('click', function(){
-			var plate_string = atob(getCookie('plate_list'));
+			var plate_array = JSON.parse(atob(getCookie('plate_list')));
 
-			if(plate_string != ''){
-				var split_array = plate_string.split('~');
-				var exists = false;
-				for(var j = 0; j < split_array.length; j++){
-					var cur_id = split_array[j].split('$')[0];
-					if(cur_id == this.id){
-						exists = true;
-						break;
-					}
-				}
-				if(exists){
-					alert('This item has already been added to the plate');
-					return;
-				}
-				else{
-					plate_string += '~';
+			var dupe = false;
+			for(var j = 0; j < plate_array.length; j++){
+				var food_array = plate_array[j];
+				if(food_array[0] == this.id){
+					dupe = true;
+					break;
 				}
 			}
 
-			plate_string += this.id + '$' + this.children[0].innerHTML + '$' + this.children[1].innerHTML;
-			setCookie('plate_list', btoa(plate_string));
+			if(dupe){
+				alert('This item has already been added to the plate');
+				return;
+			}
+			else{
+				var children = this.children;
+				plate_array.push([this.id, btoa(children[0].innerHTML), btoa(children[1].innerHTML)]);
+			}
 
+			setCookie('plate_list', btoa(JSON.stringify(plate_array)));
 			window.location = 'file:///Users/audylebovitz/Desktop/Microbiome/plate.html';
 		});
 	}
